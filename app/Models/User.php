@@ -17,7 +17,6 @@ class User extends Model
         'password',
         'id_company',
         'role',
-        'client',
         'last_login',
         'code',
         'code_expiration',
