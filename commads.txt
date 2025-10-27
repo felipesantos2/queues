@@ -1,0 +1,2 @@
+
+php artisan make:model User -m -s -f -c
