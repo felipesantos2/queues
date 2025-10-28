@@ -1,2 +1,3 @@
 
 php artisan make:model User -m -s -f -c
+λ php artisan make:model Queue -m -f -s -c

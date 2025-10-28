@@ -10,16 +10,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id', 255)->nullable()->constrained();
             $table->string('name')->nullable();
             $table->string('email', 70)->unique();
-            $table->string('password', 255)->nullable()->default(null);
-            $table->integer('id_company', 255)->default(0);
-            $table->emum('role', ['sys-admin', 'client-admin', 'client-user'])->default('client-user');
-            $table->dateTime('last_login')->nullable()->default(null);
-            $table->string('code', 64)->nullable()->default(null);
-            $table->dateTime('code_expiration', 64)->nullable()->default(null);
-            $table->bool('active')->default(false);
-            $table->dateTime('blocked_until')->nullable()->default(null);
+            $table->string('password', 255)->nullable();
+            $table->enum('role', ['sys_admin', 'client_admin', 'client_user'])->default('client_user');
+            $table->dateTime('last_login')->nullable();
+            $table->string('code', 64)->nullable()->index();
+            $table->dateTime('code_expiration', 64)->nullable();
+            $table->boolean('active')->default(false);
+            $table->dateTime('blocked_until')->nullable();
             $table->dateTime('deleted_at')->nullable()->default(null);
             $table->dateTime('created_at')->nullable()->useCurrent();
             $table->dateTime('updated_at')->nullable()->useCurrentOnUpdate();
