@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('address', 255)->nullable();
             $table->string('phone', 20)->nullable();
             $table->string('email', 100)->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('inative');
+            $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->dateTime('deleted_at')->nullable()->default(null);
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrentOnUpdate();

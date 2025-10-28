@@ -12,7 +12,13 @@ class CompanyFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name'    => fake()->unique()->company(),
+            'logo'    => fake()->imageUrl(),
+            'uuid'    => fake()->unique()->uuid(),
+            'address' => fake()->address(),
+            'phone'   => fake()->phone(),
+            'email'   => fake()->unique()->email(),
+            'status'  => fake()->randomElement(['active', 'inactive']),
         ];
     }
 }
