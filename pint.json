@@ -26,10 +26,7 @@
         "no_closing_tag": true
     },
     "exclude": [
-        "lang",
-        "storage",
         "config",
-        "bootstrap",
-        "vendor"
+        "bootstrap"
     ]
 }

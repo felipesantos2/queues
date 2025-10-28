@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model
@@ -13,9 +14,9 @@ class User extends Model
 
     protected $fillable = [
         'name',
+        'company_id',
         'email',
         'password',
-        'id_company',
         'role',
         'last_login',
         'code',
@@ -23,4 +24,9 @@ class User extends Model
         'active',
         'blocked_until',
     ];
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

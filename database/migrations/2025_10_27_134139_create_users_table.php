@@ -21,8 +21,8 @@ return new class extends Migration
             $table->boolean('active')->default(false);
             $table->dateTime('blocked_until')->nullable();
             $table->dateTime('deleted_at')->nullable()->default(null);
-            $table->dateTime('created_at')->nullable()->useCurrent();
-            $table->dateTime('updated_at')->nullable()->useCurrentOnUpdate();
+            $table->dateTime('created_at')->useCurrent();
+            $table->dateTime('updated_at')->useCurrentOnUpdate();
         });
     }
 

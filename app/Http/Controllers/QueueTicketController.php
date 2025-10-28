@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class CompanyController extends Controller
+class QueueTicketController extends Controller
 {
     //
 }
