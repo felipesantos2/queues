@@ -13,9 +13,12 @@
                     <label for="username" class="label">Usuário</label>
                     <input type="email" class="input w-full" id="username" name="username" placeholder="Usuário"
                         value="{{ old('username') }}">
-                    {{-- @error('username')
-                        {{ $message }}
-                    @enderror --}}
+
+                    <div> {!! \App\Helpers\Helpers::showValidationErrors('username', $errors) !!} </div>
+
+                    <div>
+                        <span class="text-sm text-red-500">{{ showValidationErrors('username', $errors) }}</span>
+                    </div>
                 </div>
 
                 <div class="mb-4">
