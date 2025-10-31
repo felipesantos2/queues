@@ -3,4 +3,5 @@ services:
   php:
   database:
   mail:
+  redis:
   
