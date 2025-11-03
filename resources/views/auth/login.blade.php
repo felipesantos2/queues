@@ -9,21 +9,20 @@
 
             <form action="{{ route('login.store') }}" method="post" novalidate>
                 @csrf
+
                 <div class="mb-4">
                     <label for="username" class="label">Usuário</label>
                     <input type="email" class="input w-full" id="username" name="username" placeholder="Usuário"
                         value="{{ old('username') }}">
 
-                    <div> {!! \App\Helpers\Helpers::showValidationErrors('username', $errors) !!} </div>
-
-                    <div>
-                        <span class="text-sm text-red-500">{{ showValidationErrors('username', $errors) }}</span>
-                    </div>
+                    <div> {!! showValidationErrors('username', $errors) !!} </div>
                 </div>
 
                 <div class="mb-4">
                     <label for="password" class="label">Senha</label>
                     <input type="password" class="input w-full" id="password" name="password" placeholder="Senha">
+
+                    <div> {!! showValidationErrors('password', $errors) !!} </div>
                 </div>
 
                 <div class="text-center mb-4">

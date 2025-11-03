@@ -67,3 +67,9 @@ hr {
 .link {
     @apply text-zinc-700 underline hover:text-blue-500
 }
+
+/* Felipe Css */
+
+.error {
+    @apply text-sm text-red-500 italic;
+}

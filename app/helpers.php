@@ -8,5 +8,5 @@ function showValidationErrors(string $field, ?ViewErrorBag $errors = null): stri
         return '';
     }
 
-    return $errors->first($field);
+    return '<span class="error">' . $errors->first($field) . '</span>';
 }
