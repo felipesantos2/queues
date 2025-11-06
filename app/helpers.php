@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ViewErrorBag;
 
-if(! function_exists('showValidationErrors')) {
+if (! function_exists('showValidationErrors')) {
     function showValidationErrors(string $field, ?ViewErrorBag $errors = null): string
     {
         if (is_null($errors)) {
@@ -13,9 +13,13 @@ if(! function_exists('showValidationErrors')) {
     }
 }
 
-if(! function_exists('showLoginError')) {
+if (! function_exists('showLoginError')) {
     function showLoginError(): string
     {
-        return '<span class="error">' . session()->get('login_error') . '</span>';
+        if (session()->has('login_error')) {
+            return '<span class="error">' . session()->get('login_error') . '</span>';
+        } else {
+            return '';
+        }
     }
 }
