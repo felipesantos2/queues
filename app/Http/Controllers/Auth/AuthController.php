@@ -32,6 +32,7 @@ class AuthController extends Controller
         if ($user) {
             if (Hash::check($request->password, $user->password)) {
                 $this->login($user);
+
                 return redirect()->route('home');
             } else {
                 return 'invalid login!';

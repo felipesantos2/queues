@@ -28,8 +28,6 @@ class LoginRequest extends FormRequest
             'email.max:70'      => 'The email not more than 70',
             'password.min'      => 'The password is too short! ',
             'password.required' => 'The password is required',
-            // 'validation.password.mixed'   => 'The password is required',
-            // 'validation.password.numbers' => 'The password not more than 70',
         ];
     }
 }
